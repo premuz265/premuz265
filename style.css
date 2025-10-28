@@ -1,0 +1,248 @@
+:root{
+  --accent:#5d4b91;
+  --light:#f3f5f7;
+  --card:#ffffff;
+  --green:#00c853;
+  --muted:#6b6b6b;
+  --radius:12px;
+  --gap:12px;
+}
+
+body {background-color:darkslategrey}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--light);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:78px; /* for bottom nav */
+}
+
+/* Search */
+.search-bar{
+  background:var(--accent);
+  padding:12px;
+}
+.search-bar input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-size:15px;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  gap:10px;
+  background:var(--accent);
+  color:white;
+  padding:10px 8px;
+  align-items:center;
+  justify-content:space-around;
+}
+.tab{
+  padding:6px 8px;
+  cursor:pointer;
+  opacity:.9;
+}
+.tab.active{
+  border-bottom:3px solid rgba(255,255,255,0.95);
+  padding-bottom:3px;
+  font-weight:700;
+}
+
+/* Banner */
+.banner{
+  margin:12px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(180deg, #ddd, #ccc);
+}
+.banner img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.download-btn{
+  position:absolute;
+  bottom:12px;
+  right:12px;
+  background:var(--green);
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* Sections */
+.content{padding:6px 6px 80px 6px}
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:8px 6px;
+}
+.section-header h2{margin:0;font-size:18px}
+.more-btn{
+  background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px
+}
+/* Movie row */
+.movie-row{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:8px 6px 18px 6px;
+}
+.movie{
+  flex:0 0 124px;
+  width:124px;
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 8px rgba(0,0,0,0.08);
+}
+.card-img{
+  width:100%;
+  height:170px;
+  background:#ddd;
+  display:block;
+  object-fit:cover;
+}
+.movie .meta{
+  padding:6px;
+  font-size:13px;
+}
+.movie .meta .title{
+  font-weight:600;
+  margin-bottom:4px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.movie .meta .actions{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+  margin-top:6px;
+}
+.small-btn{
+  flex:1;
+  border:none;
+  padding:6px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+/* stream button style */
+.btn-stream{background:#ececec}
+.btn-download{background:var(--green);color:white}
+
+/* bottom nav */
+.bottom-nav{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  height:60px;
+  background:#fff;
+  border-top:1px solid #e6e6e6;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  z-index:40;
+}
+
+/* Modal (player) */
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.5);
+  z-index:100;
+}
+.hidden{display:none}
+.modal-content{
+  width:94%;
+  max-width:920px;
+  background:var(--card);
+  border-radius:12px;
+  padding:12px;
+  position:relative;
+}
+.modal-content video{
+  width:100%;
+  border-radius:8px;
+  background:black;
+  max-height:60vh;
+}
+.close-modal{
+  position:absolute;
+  top:8px;
+  right:8px;
+  border:none;
+  background:#fff;
+  border-radius:50%;
+  width:34px;height:34px;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+}
+.player-actions{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+}
+.player-actions button{
+  padding:8px 10px;border-radius:8px;border:none;cursor:pointer;
+}
+
+/* Downloads panel */
+.downloads-panel{
+  position:fixed;
+  right:12px;
+  bottom:80px;
+  width:320px;
+  max-width:92%;
+  background:var(--card);
+  border-radius:10px;
+  padding:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  z-index:120;
+}
+#downloads-list{max-height:260px;overflow:auto}
+.download-item{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-bottom:8px;
+  border-bottom:1px dashed #eee;
+  padding-bottom:8px;
+}
+.di-title{flex:1;font-size:13px}
+.progress-bar{
+  width:100%;
+  height:8px;
+  background:#f0f0f0;
+  border-radius:6px;
+overflow:hidden;
+  margin-top:6px;
+}
+.progress-inner{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#00c853,#00bfa5);
+}
+
+/* small screens improvements */
+@media (min-width:720px){
+  .banner img{height:260px}
+}

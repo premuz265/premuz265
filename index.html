@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Atodomo</title>
+     <link rel="stylesheet" href="style.css" />
+     
+</head>
+<body> 
+  <!-- Search -->
+  <div class="search-bar">
+    <input type="search" id="searchInput" placeholder="Search Movie/Series/Audio" /> 
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="trending">Trending</div>
+    <div class="tab" data-tab="music">Music</div>
+    <div class="tab" data-tab="tv">TV/Series</div>
+    <div class="tab" data-tab="movie">Movie</div>
+    <div class="tab" data-tab="animation">Animation</div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img id="banner-img" src="https://via.placeholder.com/800x360?text=Featured+Movie" alt="banner" />
+    <button class="download-btn" id="banner-download">⬇ Free Download</button>
+  </div>
+
+  <!-- Sections --> 
+  <div class="content">
+    <section id="trending-section">
+      <div class="section-header">
+        <h2>Trending Now 🔥</h2>
+        <button class="more-btn" data-section="trending">More ›</button>
+      </div>
+      <div class="movie-row" id="trending-movies"></div>
+    </section>
+
+    <section id="hollywood-section">
+      <div class="section-header">
+        <h2>Hollywood Movie</h2>
+        <button class="more-btn" data-section="hollywood">More ›</button>
+      </div>
+      <div class="movie-row" id="hollywood-movies"></div>
+    </section>
+  </div>
+
+  <!-- Downloads modal / list -->
+  <div class="downloads-panel" id="downloads-panel">
+    <h3>Downloads</h3>
+    <div id="downloads-list"></div>
+    <button id="close-downloads">Close</button>
+  </div>
+
+  <!-- Video player modal -->
+  <div id="player-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-modal" id="close-player">✕</button>
+      <video id="video-player" controls playsinline></video>
+      <div class="player-actions">
+        <button id="player-download">⬇ Download</button>
+        <button id="player-fullscreen">⤢ Fullscreen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom nav -->
+  <div class="bottom-nav">
+    <div class="nav-item" id="home-btn">🏠 Home</div>
+    <div class="nav-item">📺 ShortTV</div>
+    <div class="nav-item">⭐ Premium</div>
+    <div class="nav-item" id="open-downloads">⬇ Downloads</div>
+    <div class="nav-item">👤 Me</div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
